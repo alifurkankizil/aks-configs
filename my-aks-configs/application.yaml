@@ -1,0 +1,18 @@
+﻿apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: simple-api-application
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/alifurkankizil/aks-configs'
+    targetRevision: HEAD
+    path: simple-api 
+  destination:
+    server: 'https_://kubernetes.default.svc'
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
