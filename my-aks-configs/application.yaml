@@ -10,7 +10,7 @@ spec:
     targetRevision: HEAD
     path: simple-api 
   destination:
-    server: 'https_://kubernetes.default.svc'
+    server: 'https://kubernetes.default.svc'
     namespace: default
   syncPolicy:
     automated:
